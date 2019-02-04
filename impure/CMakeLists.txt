@@ -8,10 +8,12 @@
 
 cmake_minimum_required(VERSION 3.7.2)
 
-add_subdirectory(impure)
+set(LIB impure)
+project(${LIB} C)
 
-file(GLOB utils_files
-    BareMetal/Utils.idr
+file(GLOB static
+    busywait.c
 )
-idris_add_module(BareMetal.Utils ${utils_files})
-idris_module_link_libraries(BareMetal.Utils impure)
+
+add_library(${LIB} EXCLUDE_FROM_ALL ${static})
+target_include_directories(${LIB} PUBLIC .)

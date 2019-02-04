@@ -11,7 +11,12 @@ module BareMetal.Utils
 %access public export
 %default total
 %include C "stdio.h"
+%include C "busywait.h"
 
 uartWrite : String -> IO ()
 uartWrite str =
     foreign FFI_C "printf" (String -> IO ()) str
+
+busyWait : Int -> IO ()
+busyWait loops =
+    foreign FFI_C "busywait" (Int -> IO ()) loops
