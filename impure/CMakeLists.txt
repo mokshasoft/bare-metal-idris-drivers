@@ -13,6 +13,7 @@ project(${LIB} C)
 
 file(GLOB static
     busywait.c
+    bithandler.c
 )
 
 add_library(${LIB} EXCLUDE_FROM_ALL ${static})
