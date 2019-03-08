@@ -1,0 +1,10 @@
+package drivers
+
+opts = "--total"
+
+modules = BareMetal.SocAM335x
+        , BareMetal.Utils
+        , BareMetal.HwCmPer
+        , BareMetal.HwGPIO
+        , BareMetal.GPIO
+        , BareMetal.BitHandler

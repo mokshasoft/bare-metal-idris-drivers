@@ -10,14 +10,11 @@ cmake_minimum_required(VERSION 3.7.2)
 
 add_subdirectory(impure)
 
+file(GLOB ipkg_file
+    drivers.ipkg
+)
 file(GLOB drivers_files
     BareMetal/*.idr
 )
-idris_add_module(BareMetal.Drivers ${drivers_files})
-idris_module_link_libraries(BareMetal.Drivers impure)
-
-file(GLOB utils_files
-    BareMetal/Utils.idr
-)
-idris_add_module(BareMetal.Utils ${utils_files})
-idris_module_link_libraries(BareMetal.Utils impure)
+idris_add_module(drivers ${ipkg_file} ${drivers_files})
+idris_link_libraries(drivers impure)
