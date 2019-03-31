@@ -54,13 +54,13 @@ gpio1Pin23PinMuxSetup =
     in
         writeAddrWait addr val
 
-gpioModuleEnable : Int -> IO ()
+gpioModuleEnable : Bits32 -> IO ()
 gpioModuleEnable baseAddr =
     addrClearBits
         (baseAddr + gpioCtrl)
         gpioCtrlDisablemodule
 
-gpioModuleReset : Int -> IO ()
+gpioModuleReset : Bits32 -> IO ()
 gpioModuleReset baseAddr = do
     addrSetBits
         (baseAddr + gpioSysconfig)
@@ -70,21 +70,21 @@ gpioModuleReset baseAddr = do
         0
         gpioSysstatusResetdone
 
-gpioDirModeSet : Int -> Int -> Bool -> IO ()
+gpioDirModeSet : Bits32 -> Int -> Bool -> IO ()
 gpioDirModeSet baseAddr pinNumber outDirection =
     let
        addr = baseAddr + gpioOe
-       mask = toIntNat $ Prelude.pow 2 $ toNat pinNumber
+       mask = Prelude.pow 2 $ toNat pinNumber
        func =
            if outDirection
               then addrClearBits
               else addrSetBits
     in func addr mask
 
-gpioPinWrite : Int -> Int -> Bool -> IO ()
+gpioPinWrite : Bits32 -> Int -> Bool -> IO ()
 gpioPinWrite baseAddr pinNumber pinHigh =
     let
-        val = toIntNat $ Prelude.pow 2 $ toNat pinNumber
+        val = Prelude.pow 2 $ toNat pinNumber
         addr = baseAddr +
             if pinHigh
                 then gpioSetdataout

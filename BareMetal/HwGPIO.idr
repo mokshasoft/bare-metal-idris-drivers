@@ -15,61 +15,61 @@ module BareMetal.HwGpio
     Registers Definition
 -}
 
-gpioRevision : Int
+gpioRevision : Bits32
 gpioRevision =
     0x0
-gpioSysconfig : Int
+gpioSysconfig : Bits32
 gpioSysconfig =
     0x10
-gpioIrqstatusRaw : Int ->  Int
+gpioIrqstatusRaw : Bits32 -> Bits32
 gpioIrqstatusRaw n =
     0x24 + (n * 4)
-gpioIrqstatus : Int ->  Int
+gpioIrqstatus : Bits32 -> Bits32
 gpioIrqstatus n =
     0x2c + (n * 4)
-gpioIrqstatusSet : Int ->  Int
+gpioIrqstatusSet : Bits32 -> Bits32
 gpioIrqstatusSet n =
     0x34 + (n * 4)
-gpioIrqstatusClr : Int ->  Int
+gpioIrqstatusClr : Bits32 -> Bits32
 gpioIrqstatusClr n =
     0x3c + (n * 4)
-gpioIrqwaken : Int ->  Int
+gpioIrqwaken : Bits32 -> Bits32
 gpioIrqwaken n =
     0x44 + (n * 4)
-gpioSysstatus : Int
+gpioSysstatus : Bits32
 gpioSysstatus =
     0x114
-gpioCtrl : Int
+gpioCtrl : Bits32
 gpioCtrl =
     0x130
-gpioOe : Int
+gpioOe : Bits32
 gpioOe =
     0x134
-gpioDatain : Int
+gpioDatain : Bits32
 gpioDatain =
     0x138
-gpioDataout : Int
+gpioDataout : Bits32
 gpioDataout =
     0x13c
-gpioLeveldetect : Int ->  Int
+gpioLeveldetect : Bits32 -> Bits32
 gpioLeveldetect n =
     0x140 + (n * 4)
-gpioRisingdetect : Int
+gpioRisingdetect : Bits32
 gpioRisingdetect =
     0x148
-gpioFallingdetect : Int
+gpioFallingdetect : Bits32
 gpioFallingdetect =
     0x14c
-gpioDebouncenable : Int
+gpioDebouncenable : Bits32
 gpioDebouncenable =
     0x150
-gpioDebouncingtime : Int
+gpioDebouncingtime : Bits32
 gpioDebouncingtime =
     0x154
-gpioCleardataout : Int
+gpioCleardataout : Bits32
 gpioCleardataout =
     0x190
-gpioSetdataout : Int
+gpioSetdataout : Bits32
 gpioSetdataout =
     0x194
 
@@ -78,338 +78,338 @@ gpioSetdataout =
 -}
 
 -- revision
-gpioRevisionCustom : Int
+gpioRevisionCustom : Bits32
 gpioRevisionCustom =
     0x000000c0
-gpioRevisionCustomShift : Int
+gpioRevisionCustomShift : Bits32
 gpioRevisionCustomShift =
     0x00000006
 
-gpioRevisionFunc : Int
+gpioRevisionFunc : Bits32
 gpioRevisionFunc =
     0x0fff0000
-gpioRevisionFuncShift : Int
+gpioRevisionFuncShift : Bits32
 gpioRevisionFuncShift =
     0x00000010
 
-gpioRevisionMajor : Int
+gpioRevisionMajor : Bits32
 gpioRevisionMajor =
     0x00000700
-gpioRevisionMajorShift : Int
+gpioRevisionMajorShift : Bits32
 gpioRevisionMajorShift =
     0x00000008
 
-gpioRevisionMinor : Int
+gpioRevisionMinor : Bits32
 gpioRevisionMinor =
     0x0000003f
-gpioRevisionMinorShift : Int
+gpioRevisionMinorShift : Bits32
 gpioRevisionMinorShift =
     0x00000000
 
-gpioRevisionRtl : Int
+gpioRevisionRtl : Bits32
 gpioRevisionRtl =
     0x0000f800
-gpioRevisionRtlShift : Int
+gpioRevisionRtlShift : Bits32
 gpioRevisionRtlShift =
     0x0000000b
 
-gpioRevisionScheme : Int
+gpioRevisionScheme : Bits32
 gpioRevisionScheme =
     0xc0000000
-gpioRevisionSchemeShift : Int
+gpioRevisionSchemeShift : Bits32
 gpioRevisionSchemeShift =
     0x0000001e
 
 -- sysconfig
-gpioSysconfigAutoidle : Int
+gpioSysconfigAutoidle : Bits32
 gpioSysconfigAutoidle =
     0x00000001
-gpioSysconfigAutoidleShift : Int
+gpioSysconfigAutoidleShift : Bits32
 gpioSysconfigAutoidleShift =
     0x00000000
-gpioSysconfigAutoidleAutomatic : Int
+gpioSysconfigAutoidleAutomatic : Bits32
 gpioSysconfigAutoidleAutomatic =
     0x1
-gpioSysconfigAutoidleFreerun : Int
+gpioSysconfigAutoidleFreerun : Bits32
 gpioSysconfigAutoidleFreerun =
     0x0
 
-gpioSysconfigEnawakeup : Int
+gpioSysconfigEnawakeup : Bits32
 gpioSysconfigEnawakeup =
     0x00000004
-gpioSysconfigEnawakeupShift : Int
+gpioSysconfigEnawakeupShift : Bits32
 gpioSysconfigEnawakeupShift =
     0x00000002
-gpioSysconfigEnawakeupDisable : Int
+gpioSysconfigEnawakeupDisable : Bits32
 gpioSysconfigEnawakeupDisable =
     0x0
-gpioSysconfigEnawakeupEnable : Int
+gpioSysconfigEnawakeupEnable : Bits32
 gpioSysconfigEnawakeupEnable =
     0x1
 
-gpioSysconfigIdlemode : Int
+gpioSysconfigIdlemode : Bits32
 gpioSysconfigIdlemode =
     0x00000018
-gpioSysconfigIdlemodeShift : Int
+gpioSysconfigIdlemodeShift : Bits32
 gpioSysconfigIdlemodeShift =
     0x00000003
-gpioSysconfigIdlemodeForceidle : Int
+gpioSysconfigIdlemodeForceidle : Bits32
 gpioSysconfigIdlemodeForceidle =
     0x0
-gpioSysconfigIdlemodeNoidle : Int
+gpioSysconfigIdlemodeNoidle : Bits32
 gpioSysconfigIdlemodeNoidle =
     0x1
-gpioSysconfigIdlemodeSmartidle : Int
+gpioSysconfigIdlemodeSmartidle : Bits32
 gpioSysconfigIdlemodeSmartidle =
     0x2
-gpioSysconfigIdlemodeSmartidlewakeup : Int
+gpioSysconfigIdlemodeSmartidlewakeup : Bits32
 gpioSysconfigIdlemodeSmartidlewakeup =
     0x3
 
-gpioSysconfigSoftreset : Int
+gpioSysconfigSoftreset : Bits32
 gpioSysconfigSoftreset =
     0x00000002
-gpioSysconfigSoftresetShift : Int
+gpioSysconfigSoftresetShift : Bits32
 gpioSysconfigSoftresetShift =
     0x00000001
-gpioSysconfigSoftresetNormal : Int
+gpioSysconfigSoftresetNormal : Bits32
 gpioSysconfigSoftresetNormal =
     0x0
-gpioSysconfigSoftresetReset : Int
+gpioSysconfigSoftresetReset : Bits32
 gpioSysconfigSoftresetReset =
     0x1
 
 -- irqstatusRaw0
-gpioIrqstatusRaw0Intline : Int
+gpioIrqstatusRaw0Intline : Bits32
 gpioIrqstatusRaw0Intline =
     0xffffffff
-gpioIrqstatusRaw0IntlineShift : Int
+gpioIrqstatusRaw0IntlineShift : Bits32
 gpioIrqstatusRaw0IntlineShift =
     0x00000000
 
 -- irqstatusRaw1
-gpioIrqstatusRaw1Intline : Int
+gpioIrqstatusRaw1Intline : Bits32
 gpioIrqstatusRaw1Intline =
     0xffffffff
-gpioIrqstatusRaw1IntlineShift : Int
+gpioIrqstatusRaw1IntlineShift : Bits32
 gpioIrqstatusRaw1IntlineShift =
     0x00000000
 
 -- irqstatus0
-gpioIrqstatus0Intline : Int
+gpioIrqstatus0Intline : Bits32
 gpioIrqstatus0Intline =
     0xffffffff
-gpioIrqstatus0IntlineShift : Int
+gpioIrqstatus0IntlineShift : Bits32
 gpioIrqstatus0IntlineShift =
     0x00000000
 
 -- irqstatus1
-gpioIrqstatus1Intline : Int
+gpioIrqstatus1Intline : Bits32
 gpioIrqstatus1Intline =
     0xffffffff
-gpioIrqstatus1IntlineShift : Int
+gpioIrqstatus1IntlineShift : Bits32
 gpioIrqstatus1IntlineShift =
     0x00000000
 
 -- irqstatusSet0
-gpioIrqstatusSet0Intline : Int
+gpioIrqstatusSet0Intline : Bits32
 gpioIrqstatusSet0Intline =
     0xffffffff
-gpioIrqstatusSet0IntlineShift : Int
+gpioIrqstatusSet0IntlineShift : Bits32
 gpioIrqstatusSet0IntlineShift =
     0x00000000
 
 -- irqstatusSet1
-gpioIrqstatusSet1Intline : Int
+gpioIrqstatusSet1Intline : Bits32
 gpioIrqstatusSet1Intline =
     0xffffffff
-gpioIrqstatusSet1IntlineShift : Int
+gpioIrqstatusSet1IntlineShift : Bits32
 gpioIrqstatusSet1IntlineShift =
     0x00000000
 
 -- irqstatusClr0
-gpioIrqstatusClr0Intline : Int
+gpioIrqstatusClr0Intline : Bits32
 gpioIrqstatusClr0Intline =
     0xffffffff
-gpioIrqstatusClr0IntlineShift : Int
+gpioIrqstatusClr0IntlineShift : Bits32
 gpioIrqstatusClr0IntlineShift =
     0x00000000
 
 -- irqstatusClr1
-gpioIrqstatusClr1Intline : Int
+gpioIrqstatusClr1Intline : Bits32
 gpioIrqstatusClr1Intline =
     0xffffffff
-gpioIrqstatusClr1IntlineShift : Int
+gpioIrqstatusClr1IntlineShift : Bits32
 gpioIrqstatusClr1IntlineShift =
     0x00000000
 
 -- sysstatus
-gpioSysstatusResetdone : Int
+gpioSysstatusResetdone : Bits32
 gpioSysstatusResetdone =
     0x00000001
-gpioSysstatusResetdoneShift : Int
+gpioSysstatusResetdoneShift : Bits32
 gpioSysstatusResetdoneShift =
     0x00000000
-gpioSysstatusResetdoneComplete : Int
+gpioSysstatusResetdoneComplete : Bits32
 gpioSysstatusResetdoneComplete =
     0x1
-gpioSysstatusResetdoneOngoing : Int
+gpioSysstatusResetdoneOngoing : Bits32
 gpioSysstatusResetdoneOngoing =
     0x0
 
 -- ctrl
-gpioCtrlDisablemodule : Int
+gpioCtrlDisablemodule : Bits32
 gpioCtrlDisablemodule =
     0x00000001
-gpioCtrlDisablemoduleShift : Int
+gpioCtrlDisablemoduleShift : Bits32
 gpioCtrlDisablemoduleShift =
     0x00000000
-gpioCtrlDisablemoduleDisabled : Int
+gpioCtrlDisablemoduleDisabled : Bits32
 gpioCtrlDisablemoduleDisabled =
     0x1
-gpioCtrlDisablemoduleEnabled : Int
+gpioCtrlDisablemoduleEnabled : Bits32
 gpioCtrlDisablemoduleEnabled =
     0x0
 
-gpioCtrlGatingratio : Int
+gpioCtrlGatingratio : Bits32
 gpioCtrlGatingratio =
     0x00000006
-gpioCtrlGatingratioShift : Int
+gpioCtrlGatingratioShift : Bits32
 gpioCtrlGatingratioShift =
     0x00000001
-gpioCtrlGatingratioN1 : Int
+gpioCtrlGatingratioN1 : Bits32
 gpioCtrlGatingratioN1 =
     0x0
-gpioCtrlGatingratioN2 : Int
+gpioCtrlGatingratioN2 : Bits32
 gpioCtrlGatingratioN2 =
     0x1
-gpioCtrlGatingratioN4 : Int
+gpioCtrlGatingratioN4 : Bits32
 gpioCtrlGatingratioN4 =
     0x2
-gpioCtrlGatingratioN8 : Int
+gpioCtrlGatingratioN8 : Bits32
 gpioCtrlGatingratioN8 =
     0x3
 
 -- oe
-gpioOeOutputen : Int
+gpioOeOutputen : Bits32
 gpioOeOutputen =
     0xffffffff
-gpioOeOutputenShift : Int
+gpioOeOutputenShift : Bits32
 gpioOeOutputenShift =
     0x00000000
-gpioOeOutputenDisabled : Int
+gpioOeOutputenDisabled : Bits32
 gpioOeOutputenDisabled =
     0x1
-gpioOeOutputenEnabled : Int
+gpioOeOutputenEnabled : Bits32
 gpioOeOutputenEnabled =
     0x0
 
 -- datain
-gpioDatainDatain : Int
+gpioDatainDatain : Bits32
 gpioDatainDatain =
     0xffffffff
-gpioDatainDatainShift : Int
+gpioDatainDatainShift : Bits32
 gpioDatainDatainShift =
     0x00000000
 
 -- dataout
-gpioDataoutDataout : Int
+gpioDataoutDataout : Bits32
 gpioDataoutDataout =
     0xffffffff
-gpioDataoutDataoutShift : Int
+gpioDataoutDataoutShift : Bits32
 gpioDataoutDataoutShift =
     0x00000000
 
 -- leveldetect0
-gpioLeveldetect0Leveldetect0 : Int
+gpioLeveldetect0Leveldetect0 : Bits32
 gpioLeveldetect0Leveldetect0 =
     0xffffffff
-gpioLeveldetect0Leveldetect0Shift : Int
+gpioLeveldetect0Leveldetect0Shift : Bits32
 gpioLeveldetect0Leveldetect0Shift =
     0x00000000
-gpioLeveldetect0Leveldetect0Disabled : Int
+gpioLeveldetect0Leveldetect0Disabled : Bits32
 gpioLeveldetect0Leveldetect0Disabled =
     0x0
-gpioLeveldetect0Leveldetect0Enabled : Int
+gpioLeveldetect0Leveldetect0Enabled : Bits32
 gpioLeveldetect0Leveldetect0Enabled =
     0x1
 
 -- leveldetect1
-gpioLeveldetect1Leveldetect1 : Int
+gpioLeveldetect1Leveldetect1 : Bits32
 gpioLeveldetect1Leveldetect1 =
     0xffffffff
-gpioLeveldetect1Leveldetect1Shift : Int
+gpioLeveldetect1Leveldetect1Shift : Bits32
 gpioLeveldetect1Leveldetect1Shift =
     0x00000000
-gpioLeveldetect1Leveldetect1Disabled : Int
+gpioLeveldetect1Leveldetect1Disabled : Bits32
 gpioLeveldetect1Leveldetect1Disabled =
     0x0
-gpioLeveldetect1Leveldetect1Enabled : Int
+gpioLeveldetect1Leveldetect1Enabled : Bits32
 gpioLeveldetect1Leveldetect1Enabled =
     0x1
 
 -- risingdetect
-gpioRisingdetectRisingdetect : Int
+gpioRisingdetectRisingdetect : Bits32
 gpioRisingdetectRisingdetect =
     0xffffffff
-gpioRisingdetectRisingdetectShift : Int
+gpioRisingdetectRisingdetectShift : Bits32
 gpioRisingdetectRisingdetectShift =
     0x00000000
-gpioRisingdetectRisingdetectDisabled : Int
+gpioRisingdetectRisingdetectDisabled : Bits32
 gpioRisingdetectRisingdetectDisabled =
     0x0
-gpioRisingdetectRisingdetectEnabled : Int
+gpioRisingdetectRisingdetectEnabled : Bits32
 gpioRisingdetectRisingdetectEnabled =
     0x1
 
 -- fallingdetect
-gpioFallingdetectFallingdetect : Int
+gpioFallingdetectFallingdetect : Bits32
 gpioFallingdetectFallingdetect =
     0xffffffff
-gpioFallingdetectFallingdetectShift : Int
+gpioFallingdetectFallingdetectShift : Bits32
 gpioFallingdetectFallingdetectShift =
     0x00000000
-gpioFallingdetectFallingdetectDisabled : Int
+gpioFallingdetectFallingdetectDisabled : Bits32
 gpioFallingdetectFallingdetectDisabled =
     0x0
-gpioFallingdetectFallingdetectEnabled : Int
+gpioFallingdetectFallingdetectEnabled : Bits32
 gpioFallingdetectFallingdetectEnabled =
     0x1
 
 -- debouncenable
-gpioDebouncenableDebounceenable : Int
+gpioDebouncenableDebounceenable : Bits32
 gpioDebouncenableDebounceenable =
     0xffffffff
-gpioDebouncenableDebounceenableShift : Int
+gpioDebouncenableDebounceenableShift : Bits32
 gpioDebouncenableDebounceenableShift =
     0x00000000
-gpioDebouncenableDebounceenableDebounce : Int
+gpioDebouncenableDebounceenableDebounce : Bits32
 gpioDebouncenableDebounceenableDebounce =
     0x1
-gpioDebouncenableDebounceenableNodebounce : Int
+gpioDebouncenableDebounceenableNodebounce : Bits32
 gpioDebouncenableDebounceenableNodebounce =
     0x0
 
 -- debouncingtime
-gpioDebouncingtimeDebouncetime : Int
+gpioDebouncingtimeDebouncetime : Bits32
 gpioDebouncingtimeDebouncetime =
     0x000000ff
-gpioDebouncingtimeDebouncetimeShift : Int
+gpioDebouncingtimeDebouncetimeShift : Bits32
 gpioDebouncingtimeDebouncetimeShift =
     0x00000000
 
 -- cleardataout
-gpioCleardataoutIntline : Int
+gpioCleardataoutIntline : Bits32
 gpioCleardataoutIntline =
     0xffffffff
-gpioCleardataoutIntlineShift : Int
+gpioCleardataoutIntlineShift : Bits32
 gpioCleardataoutIntlineShift =
     0x00000000
 
 -- setdataout
-gpioSetdataoutIntline : Int
+gpioSetdataoutIntline : Bits32
 gpioSetdataoutIntline =
     0xffffffff
-gpioSetdataoutIntlineShift : Int
+gpioSetdataoutIntlineShift : Bits32
 gpioSetdataoutIntlineShift =
     0x00000000
