@@ -3,3 +3,4 @@ package stwf-ffi
 opts = "--total"
 
 modules = StwfFFI.Utils
+        , StwfFFI.GPIO
