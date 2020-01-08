@@ -1,0 +1,5 @@
+package stwf-ffi
+
+opts = "--total"
+
+modules = StwfFFI.Utils
